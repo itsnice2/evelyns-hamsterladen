@@ -16,25 +16,132 @@
     </div>
 
     <div class="zahlen">
-        Kontostand: <label id="kontostand">10.00</label> € | Miete: <label id="miete">0</label> € | Einkommen: <label id="einkommen">0</label> €
+        Kontostand: <label id="kontostand">10</label> € | Kosten/Monat: <label id="kosten">0</label> € | Einkommen: <label id="einkommen">0</label> €
     </div>
 
     <div class="ladebalken">
-        <div class="loader"></div>
+        <div class="loader"><label id="loader">30.</label></div>
+    </div>
+
+    <div class="menue">
+        <img src="./assets/images/hamster/hamster.png" class="hamstermenu" onclick="show('laden')">
+        <img src="./assets/images/hamster/hamster_kasse.png" class="hamstermenu" onclick="show('verkaeufer')">
+        <img src="./assets/images/hamster/hamster_hausmeister.png" class="hamstermenu" onclick="show('hausmeister')">
+        <img src="./assets/images/hamster/hamster_kiste.png" class="hamstermenu" onclick="show('versand')">
+        <img src="./assets/images/hamster/hamster_korb.png" class="hamstermenu" onclick="show('werbung')">
+        <img src="./assets/images/hamster/hamster_wischmopp.png" class="hamstermenu" onclick="show('reinigung')">
+        <img src="./assets/images/hamster/hamster_tafel.png" class="hamstermenu" onclick="show('bildung')">
+        <img src="./assets/images/hamster/hamster_kuchen.png" class="hamstermenu" onclick="show('ernaehrung')">
+        <img src="./assets/images/hamster/hamster_matte.png" class="hamstermenu" onclick="show('sport')">
+        <img src="./assets/images/hamster/hamster_geschenk.png" class="hamstermenu" onclick="show('geschenk')">
     </div>
 
     <div class="content">
         <div class="row">
 
             <div class="col links">
-                Seite 1
-            </div>
+                <div class="hamsterliste" id="laden">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster.png" class="hamsterbilder"> Hamsterladen</p>
+                    <p class="liste-plus"><button class="plus" id="plus-laden">+</button> <label class="liste-plus-text"><label id="hamsterpreis">1</label> € pro verkauftem Hamster</label></p>
+                    <p class="liste-erklaerung">Ein Geschäft in dem Hamster verkauft werden. Du kannst größere Läden kaufen und sie verschönern, um die Preise für Hamster, und die Verkäufe pro Tag zu steigern.</p>
+                    <p class="laden laden-update-21"><button class="kaufbutton" id="laden-update-21">15.000.000.000 €</button> <img src="./assets/images/emojis/1F33B.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-20"><button class="kaufbutton" id="laden-update-20">7.000.000.000 €</button> <img src="./assets/images/emojis/1F339.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-19"><button class="kaufbutton" id="laden-update-19">5.000.000.000 €</button> <img src="./assets/images/emojis/1F337.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-18"><button class="kaufbutton" id="laden-update-18">1.000.000.000 €</button> <img src="./assets/images/emojis/1F6D2.svg" class="icons"> Kaufe den größten Laden Deutschlands! (Miete: 100.000.000 €/Monat)</p>
+                    <p class="laden laden-update-17"><button class="kaufbutton" id="laden-update-17">70.000.000 €</button> <img src="./assets/images/emojis/1F33B.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-16"><button class="kaufbutton" id="laden-update-16">30.000.000 €</button> <img src="./assets/images/emojis/1F339.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-15"><button class="kaufbutton" id="laden-update-15">20.000.000 €</button> <img src="./assets/images/emojis/1F337.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-14"><button class="kaufbutton" id="laden-update-14">10.000.000 €</button> <img src="./assets/images/emojis/1F6D2.svg" class="icons"> Kaufe einen viel größeren Laden (Miete: 1.000.000 €/Monat)</p>
+                    <p class="laden laden-update-13"><button class="kaufbutton" id="laden-update-13">9.000.000 €</button> <img src="./assets/images/emojis/1F33B.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-12"><button class="kaufbutton" id="laden-update-12">6.000.000 €</button> <img src="./assets/images/emojis/1F339.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-11"><button class="kaufbutton" id="laden-update-11">2.000.000 €</button> <img src="./assets/images/emojis/1F337.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-10"><button class="kaufbutton" id="laden-update-10">1.000.000 €</button> <img src="./assets/images/emojis/1F6D2.svg" class="icons"> Kaufe einen noch größeren Laden (Miete: 100.000 €/Monat)</p>
+                    <p class="laden laden-update-9"><button class="kaufbutton" id="laden-update-9">700.000 €</button> <img src="./assets/images/emojis/1F33B.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-8"><button class="kaufbutton" id="laden-update-8">400.000 €</button> <img src="./assets/images/emojis/1F339.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-7"><button class="kaufbutton" id="laden-update-7">300.000 €</button> <img src="./assets/images/emojis/1F337.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-6"><button class="kaufbutton" id="laden-update-6">100.000 €</button> <img src="./assets/images/emojis/1F6D2.svg" class="icons"> Kaufe einen größeren Laden (Miete 1.000 €/Monat)</p>
+                    <p class="laden laden-update-5"><button class="kaufbutton" id="laden-update-5">9000 €</button> <img src="./assets/images/emojis/1F33B.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-4"><button class="kaufbutton" id="laden-update-4">5000 €</button> <img src="./assets/images/emojis/1F339.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-3"><button class="kaufbutton" id="laden-update-3">3000 €</button> <img src="./assets/images/emojis/1F337.svg" class="icons"> Laden verschönern</p>
+                    <p class="laden laden-update-2"><button class="kaufbutton" id="laden-update-2">1000 €</button> <img src="./assets/images/emojis/1F6D2.svg" class="icons"> Kaufe deinen ersten eigenen kleinen Laden (Miete 100 €/Monat)</p>
+                    <p class="laden laden-update-1"><button class="kaufbutton" id="laden-update-1">10 €</button> Kaufe deine ersten Hamster und starte dein Geschäft von zu Hause aus!</p>              
+                </div>
+                
+                <div class="hamsterliste" id="verkaeufer">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_kasse.png" class="hamsterbilder"> Hamsterverkäufer</p>
+                    <p class="liste-erklaerung">Verkäufer verkaufen Hamster, so dass du nicht mehr selber verkaufen musst. Allerdings müssen sie auch bezahlt werden, und kosten dich ein kleines Gehalt pro Monat! Wenn du Verkäufer schulst, können sie mehr Hamster am Tag verkaufen!</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-1">300 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Stelle eine(n) Verkäufer(in) ein (Gehalt 100 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-2">1.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 300 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-3">5.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 500 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-4">10.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 700 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-5">15.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 1.000 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-6">20.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 2.000 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-7">25.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 3.000 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-8">30.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 4.000 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-9">40.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 5.000 €/Monat)</p>
+                    <p class=""><button class="kaufbutton" id="verkaeufer-update-10">50.000 €</button>  <img src="./assets/images/emojis/1F4B6.svg" class="icons"> Verkäuferschulung (neues Gehalt 6.000 €/Monat)</p>                    
+                </div>
 
-            <div class="col rechts">
-                Seite 2
+                <div class="hamsterliste" id="hausmeister">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_hausmeister.png" class="hamsterbilder"> Hamsterhausmeister</p>
+                    <p class="liste-erklaerung">Ein Hausmeister sorgt dafür, dass dein Laden immer Tip-Top aussieht. Dadurch fühlen sich die Kunden wohler, und kaufen mehr Hamster.</p>
+                </div>
+
+                <div class="hamsterliste" id="versand">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_kiste.png" class="hamsterbilder"> Hamsterversand</p>
+                    <p class="liste-erklaerung">Optimiere den Versand um monatlich Kosten zu senken.</p>
+                </div>
+
+                <div class="hamsterliste" id="werbung">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_korb.png" class="hamsterbilder"> Hamsterwerbung</p>
+                    <p class="liste-erklaerung">Werbung sorgt für mehr Interesse an Hamstern. Dadurch steigen deine Verkäufe pro Tag.</p>
+                </div>
+
+                <div class="hamsterliste" id="reinigung">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_wischmopp.png" class="hamsterbilder"> Hamsterreiniung</p>
+                    <p class="liste-erklaerung">Saubere Hamster sorgen für saubere Preise</p>
+                </div>
+
+                <div class="hamsterliste" id="bildung">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_tafel.png" class="hamsterbilder"> Hamsterbildung</p>
+                    <p class="liste-erklaerung">Klügere Hamster = höherer Preis</p>
+                </div>
+
+                <div class="hamsterliste" id="ernaehrung">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_kuchen.png" class="hamsterbilder"> Hamsterernährung</p>
+                    <p class="liste-erklaerung">Eine verbesserte Ernährung sorgt für gesündere Hamster. Dadurch sehen sie besser aus, und du erzielst einen höheren Preis für sie.</p>
+                </div>
+
+                <div class="hamsterliste" id="sport">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_matte.png" class="hamsterbilder"> Hamstersport</p>
+                    <p class="liste-erklaerung">Lass deine Hamster Sport machen. Dadurch werden sie fitter, und du kannst einen höheren Preis für sie verlangen :D</p>
+                </div>
+
+                <div class="hamsterliste" id="geschenk">
+                    <p class="liste-ueberschrift"><img src="./assets/images/hamster/hamster_geschenk.png" class="hamsterbilder"> Hamstergeschenk</p>
+                    <p class="liste-erklaerung">Löse Aufgaben, und verdiene dir einen kleinen Bonus ;-)</p>
+                    <p class="aufgabe" id="aufgabe-1">
+                        <p class="frage" id="frage">Hamster sind...</p>
+                        <form id="frage-form">
+                            <input class="antwort-radio" type="radio" name="aufgabe1" id="antwort1" value="1"> <label for="antwort1" class="antwort-label" id="antwort1text">Nagetiere</label><br>
+                            <input class="antwort-radio" type="radio" name="aufgabe1" id="antwort2" value="2"> <label for="antwort2" class="antwort-label" id="antwort2text">Vögel</label><br>
+                            <input class="antwort-radio" type="radio" name="aufgabe1" id="antwort3" value="3"> <label for="antwort3" class="antwort-label" id="antwort3text">Insekten</label><br>
+                            <input class="antwort-radio" type="radio" name="aufgabe1" id="antwort4" value="4"> <label for="antwort4" class="antwort-label" id="antwort4text">Mäuse</label><br>
+                            <button class="loesen" id="aufgabe-loesung"></button> <button class="loesen" id="test">TEST</button>
+                        </form>
+                        <p id="antwort-link"></p>
+                    </p>                    
+                </div>
+
             </div>
 
         </div>
+    </div>
+
+    <div class="footer">
+        Die Hamsterbilder wurden mit Apples Genmoji erstellt.
+        <br>
+        Andere Emojis sind von <a href="https://openmoji.org" target="_blank">Openmoji</a>
     </div>
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
