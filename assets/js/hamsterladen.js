@@ -1,6 +1,6 @@
 // Globale Variablen
 var kontostand = $("#kontostand");
-var konto = 1000000000; // TODO: 10
+var konto = 100000000000; // TODO: 10
 var kosten = 0;
 var einkommen = 0;
 var hamsterverkauf = 1;
@@ -53,15 +53,15 @@ $(document).ready(function(){
     setInterval(function(){
         tage = tage - 1;
 
+        if(einkommen > 0){
+            konto = konto + (einkommen * hamsterverkauf);
+        }        
+
         if(tage > 1){
             $("#loader").html(tage + ".")
-            // Einkommen addieren
-            konto = konto + einkommen;
         }
         else{
-            $("#loader").html(tage + ".")            
-            // Einkommen addieren
-            konto = konto + einkommen;
+            $("#loader").html(tage + ".")                        
             // Kosten abziehen!!
             konto = konto - kosten;
             tage = tage_start + 1;
@@ -73,7 +73,7 @@ $(document).ready(function(){
     },5000);
     
     $("#test").on("click", function(){
-         // Nichts...
+         update_kaufen(1000, "#laden-update-", ".laden-update-", 100)
     });
 
     $("#frage-form").submit(function(event){
@@ -120,88 +120,89 @@ $(document).ready(function(){
     /* === Hamsterladen ===================================================================== */
 
             $("#laden-update-1").on("click", function(){
-                update_kaufen(10, "#laden-update-1", ".laden-update-2", 0)
-                $(".liste-plus").show();
+                if(update_kaufen(10, "#laden-update-1", ".laden-update-2", 0, 0, 0) == true){
+                    $(".liste-plus").show();
+                }                
             });
 
             $("#laden-update-2").on("click", function(){
-                update_kaufen(1000, "#laden-update-2", ".laden-update-3", 100)
+                update_kaufen(1000, "#laden-update-2", ".laden-update-3", 100, 1, 1)
             });
 
             $("#laden-update-3").on("click", function(){
-                // Nichts...
+                update_kaufen(3000, "#laden-update-3", ".laden-update-4", 0, 0, 0)
             });
 
             $("#laden-update-4").on("click", function(){
-                // Nichts...
+                update_kaufen(5000, "#laden-update-4", ".laden-update-5", 0, 0, 0)
             });
 
             $("#laden-update-5").on("click", function(){
-                // Nichts...
+                update_kaufen(9000, "#laden-update-5", ".laden-update-6", 0, 0, 0)
             });
 
             $("#laden-update-6").on("click", function(){
-                // Nichts...
+                update_kaufen(100000, "#laden-update-6", ".laden-update-7", 1000, 0, 0)
             });
 
             $("#laden-update-7").on("click", function(){
-                // Nichts...
+                update_kaufen(300000, "#laden-update-7", ".laden-update-8", 0, 0, 0)
             });
 
             $("#laden-update-8").on("click", function(){
-                // Nichts...
+                update_kaufen(400000, "#laden-update-8", ".laden-update-9", 0, 0, 0)
             });
 
             $("#laden-update-9").on("click", function(){
-                // Nichts...
+                update_kaufen(700000, "#laden-update-9", ".laden-update-10", 0, 0, 0)
             });
 
             $("#laden-update-10").on("click", function(){
-                // Nichts...
+                update_kaufen(1000000, "#laden-update-10", ".laden-update-11", 100000, 0, 0)
             });
 
             $("#laden-update-11").on("click", function(){
-                // Nichts...
+                update_kaufen(2000000, "#laden-update-11", ".laden-update-12", 0, 0, 0)
             });
 
             $("#laden-update-12").on("click", function(){
-                // Nichts...
+                update_kaufen(6000000, "#laden-update-12", ".laden-update-13", 0, 0, 0)
             });
 
             $("#laden-update-13").on("click", function(){
-                // Nichts...
+                update_kaufen(9000000, "#laden-update-13", ".laden-update-14", 0, 0, 0)
             });
 
             $("#laden-update-14").on("click", function(){
-                // Nichts...
+                update_kaufen(10000000, "#laden-update-14", ".laden-update-15", 1000000, 0, 0)
             });
 
             $("#laden-update-15").on("click", function(){
-                // Nichts...
+                update_kaufen(20000000, "#laden-update-15", ".laden-update-16", 0, 0, 0)
             });
 
             $("#laden-update-16").on("click", function(){
-                // Nichts...
+                update_kaufen(30000000, "#laden-update-16", ".laden-update-17", 0, 0, 0)
             });
 
             $("#laden-update-17").on("click", function(){
-                // Nichts...
+                update_kaufen(70000000, "#laden-update-17", ".laden-update-18", 0, 0, 0)
             });
 
             $("#laden-update-18").on("click", function(){
-                // Nichts...
+                update_kaufen(1000000000, "#laden-update-18", ".laden-update-19", 100000000, 0, 0)
             });
 
             $("#laden-update-19").on("click", function(){
-                // Nichts...
+                update_kaufen(5000000000, "#laden-update-19", ".laden-update-20", 0, 0, 0)
             });
 
             $("#laden-update-20").on("click", function(){
-                // Nichts...
+                update_kaufen(7000000000, "#laden-update-20", ".laden-update-21", 0, 0, 0)
             });
 
             $("#laden-update-21").on("click", function(){
-                // Nichts...
+                update_kaufen(15000000000, "#laden-update-21", false, 0, 0, 0)
             });
 
     /* === Hamsterverkäufer ===================================================================== */
@@ -301,13 +302,22 @@ function test(){
     //console.log(aufgabe.Antwort1);
 }
 
-function update_kaufen(kosten_fuer_element, dieses_element, naechstes_element, neue_kosten = 0){
+function update_kaufen(kosten_fuer_element, dieses_element, naechstes_element, neue_kosten = 0, verkauf_hamster = 0, verkauf_einkommen = 0){
     if(konto >= kosten_fuer_element){
+
+        hamsterverkauf = hamsterverkauf + verkauf_hamster;
+            $("#hamsterpreis").text(hamsterverkauf);
+        einkommen = einkommen + verkauf_einkommen;        
+            $("#einkommen").text(einkommen);
         konto = konto - kosten_fuer_element;
         kosten = kosten + neue_kosten;
-        $("#kosten").text(kosten);
+            $("#kosten").text(kosten);
         kontostand.text(konto)      
+
         $(dieses_element).hide();              
-        $(naechstes_element).show();        
+        $(naechstes_element).show();
+
+        return true;
     }
+    return false;
 }
